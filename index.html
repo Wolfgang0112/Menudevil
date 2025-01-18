@@ -1,49 +1,70 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MenuDevil - Compare Restaurant Prices</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MenuDevil - Home</title>
+    <style>
+        /* Basic styling to make the buttons look good */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .categoryButton {
+            background-color: #ff6600; /* Orange color to match the Food Devil logo */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 20px;
+            border-radius: 5px;
+        }
+
+        .categoryButton:hover {
+            background-color: #cc5200; /* Darker orange on hover */
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Header Section -->
-    <header>
-        <img src="logo.jpg" alt="MenuDevil Logo" class="logo">
-    </header>
 
-    <!-- Main Content Section -->
-    <main>
-        <h1>Welcome to MenuDevil</h1>
-        <p>Find and compare restaurant menu items near you with ease!</p>
+    <h1>Welcome to MenuDevil</h1>
+    <p>Choose a category to explore the best menu options:</p>
 
-        <div class="sections-container">
-            <!-- Dine-In Section -->
-            <section class="menu-section">
-                <h2>Dine-In</h2>
-                <button onclick="window.location.href='/dine-in.html'">Compare Prices</button>
-            </section>
+    <!-- Dine-in button -->
+    <button id="dineInButton" class="categoryButton">Dine-in</button>
 
-            <!-- Take-Out Section -->
-            <section class="menu-section">
-                <h2>Take-Out</h2>
-                <button onclick="window.location.href='/take-out.html'">Compare Prices</button>
-            </section>
+    <!-- Take-out button -->
+    <button id="takeOutButton" class="categoryButton">Take-out</button>
 
-            <!-- Fast Food Section -->
-            <section class="menu-section">
-                <h2>Fast Food</h2>
-                <button onclick="window.location.href='/fast-food.html'">Compare Prices</button>
-            </section>
-        </div>
-    </main>
+    <!-- Fast Food button -->
+    <button id="fastFoodButton" class="categoryButton">Fast Food</button>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 MenuDevil. All rights reserved.</p>
-    </footer>
+    <script>
+        // JavaScript to handle button clicks and redirect to category pages
+        let dineInButton = document.getElementById('dineInButton');
+        let takeOutButton = document.getElementById('takeOutButton');
+        let fastFoodButton = document.getElementById('fastFoodButton');
+
+        dineInButton.addEventListener('click', function() {
+            window.location.href = 'dinein.html?category=dinein'; // Redirect to dinein.html with category info
+        });
+
+        takeOutButton.addEventListener('click', function() {
+            window.location.href = 'takeout.html?category=takeout'; // Redirect to takeout.html with category info
+        });
+
+        fastFoodButton.addEventListener('click', function() {
+            window.location.href = 'fastfood.html?category=fastfood'; // Redirect to fastfood.html with category info
+        });
+    </script>
+
 </body>
-
 </html>
