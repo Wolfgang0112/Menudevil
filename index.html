@@ -3,38 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Devil</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MenuDevil - Compare Menus & Find Deals</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Menu Devil</h1>
-        <p>Find the best meals near you with ease!</p>
+        <img src="logo.png" alt="MenuDevil Logo" class="logo">
+        <h1>Welcome to MenuDevil</h1>
+        <p>Your one-stop solution to compare food prices and ingredients locally.</p>
     </header>
 
-    <section class="menu-section">
-        <h2>Explore Menus</h2>
-        <div class="menu-item">
-            <h3>Pizza Margherita</h3>
-            <p>Classic pizza with fresh mozzarella, tomatoes, and basil.</p>
-            <button class="compare-btn">Compare Price</button>
-        </div>
-        <div class="menu-item">
-            <h3>Spaghetti Bolognese</h3>
-            <p>Traditional Italian pasta with rich meat sauce.</p>
-            <button class="compare-btn">Compare Price</button>
-        </div>
-        <div class="menu-item">
-            <h3>Caesar Salad</h3>
-            <p>Fresh greens with Caesar dressing, croutons, and parmesan.</p>
-            <button class="compare-btn">Compare Price</button>
-        </div>
-    </section>
+    <main>
+        <section class="category" id="dine-in">
+            <h2>Dine-In</h2>
+            <p>Find the best places to enjoy your meals out.</p>
+            <button onclick="handleCategory('dine-in')">Compare Prices</button>
+        </section>
+
+        <section class="category" id="take-out">
+            <h2>Take-Out</h2>
+            <p>Explore the best take-out options around you.</p>
+            <button onclick="handleCategory('take-out')">Compare Prices</button>
+        </section>
+
+        <section class="category" id="fast-food">
+            <h2>Fast Food</h2>
+            <p>Compare prices for your favorite quick bites.</p>
+            <button onclick="handleCategory('fast-food')">Compare Prices</button>
+        </section>
+
+        <section id="newsletter">
+            <h3>Stay Updated</h3>
+            <p>Sign up to get updates on local food deals!</p>
+            <form id="email-form">
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Menu Devil. All Rights Reserved.</p>
+        <p>&copy; 2025 MenuDevil. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
