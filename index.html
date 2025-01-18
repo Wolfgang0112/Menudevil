@@ -1,70 +1,85 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MenuDevil - Home</title>
+    <title>Menu Devil</title>
     <style>
-        /* Basic styling to make the buttons look good */
         body {
             font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
             text-align: center;
-            background-color: #f4f4f4;
         }
 
         h1 {
-            color: #333;
+            color: #ff6600;
+            padding-top: 50px;
+        }
+
+        .category {
+            background-color: #fff;
+            padding: 50px;
+            margin: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+
+        .category h2 {
+            color: #ff6600;
         }
 
         .categoryButton {
-            background-color: #ff6600; /* Orange color to match the Food Devil logo */
+            background-color: #ff6600;
             border: none;
             color: white;
-            padding: 15px 32px;
+            padding: 15px;
             font-size: 18px;
             cursor: pointer;
-            margin: 20px;
-            border-radius: 5px;
+            border-radius: 8px;
+            margin: 15px;
         }
 
         .categoryButton:hover {
-            background-color: #cc5200; /* Darker orange on hover */
+            background-color: #cc5200;
         }
+
+        .footer {
+            background-color: #ff6600;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
+        }
+
     </style>
 </head>
 <body>
 
-    <h1>Welcome to MenuDevil</h1>
-    <p>Choose a category to explore the best menu options:</p>
+    <h1>Menu Devil</h1>
 
-    <!-- Dine-in button -->
-    <button id="dineInButton" class="categoryButton">Dine-in</button>
+    <div class="category">
+        <h2>Dine-In</h2>
+        <p>Find the best dine-in menu options in your area.</p>
+        <a href="dinein.html"><button class="categoryButton">Compare Prices</button></a>
+    </div>
 
-    <!-- Take-out button -->
-    <button id="takeOutButton" class="categoryButton">Take-out</button>
+    <div class="category">
+        <h2>Take-Out</h2>
+        <p>Check out take-out options near you.</p>
+        <a href="takeout.html"><button class="categoryButton">Compare Prices</button></a>
+    </div>
 
-    <!-- Fast Food button -->
-    <button id="fastFoodButton" class="categoryButton">Fast Food</button>
+    <div class="category">
+        <h2>Fast Food</h2>
+        <p>Compare fast food menus around your area.</p>
+        <a href="fastfood.html"><button class="categoryButton">Compare Prices</button></a>
+    </div>
 
-    <script>
-        // JavaScript to handle button clicks and redirect to category pages
-        let dineInButton = document.getElementById('dineInButton');
-        let takeOutButton = document.getElementById('takeOutButton');
-        let fastFoodButton = document.getElementById('fastFoodButton');
-
-        dineInButton.addEventListener('click', function() {
-            window.location.href = 'dinein.html?category=dinein'; // Redirect to dinein.html with category info
-        });
-
-        takeOutButton.addEventListener('click', function() {
-            window.location.href = 'takeout.html?category=takeout'; // Redirect to takeout.html with category info
-        });
-
-        fastFoodButton.addEventListener('click', function() {
-            window.location.href = 'fastfood.html?category=fastfood'; // Redirect to fastfood.html with category info
-        });
-    </script>
+    <div class="footer">
+        <p>© 2025 Menu Devil. All rights reserved.</p>
+    </div>
 
 </body>
 </html>
