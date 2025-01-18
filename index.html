@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MenuDevil - Compare Menus & Find Deals</title>
+    <title>MenuDevil - Compare Restaurant Prices</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <!-- Header Section -->
     <header>
-        <img src="logo.jpg" alt="MenuDevil Logo" class="logo">
-        <h1>Welcome to MenuDevil</h1>
-        <p>Your one-stop solution to compare food prices and ingredients locally.</p>
+        <img src="logo.png" alt="MenuDevil Logo" class="logo">
     </header>
 
+    <!-- Main Content Section -->
     <main>
-        <section class="category" id="dine-in">
-            <h2>Dine-In</h2>
-            <p>Find the best places to enjoy your meals out.</p>
-            <button onclick="handleCategory('dine-in')">Compare Prices</button>
-        </section>
+        <h1>Welcome to MenuDevil</h1>
+        <p>Find and compare restaurant menu items near you with ease!</p>
 
-        <section class="category" id="take-out">
-            <h2>Take-Out</h2>
-            <p>Explore the best take-out options around you.</p>
-            <button onclick="handleCategory('take-out')">Compare Prices</button>
-        </section>
+        <div class="sections-container">
+            <!-- Dine-In Section -->
+            <section class="menu-section">
+                <h2>Dine-In</h2>
+                <button onclick="window.location.href='/dine-in.html'">Compare Prices</button>
+            </section>
 
-        <section class="category" id="fast-food">
-            <h2>Fast Food</h2>
-            <p>Compare prices for your favorite quick bites.</p>
-            <button onclick="handleCategory('fast-food')">Compare Prices</button>
-        </section>
+            <!-- Take-Out Section -->
+            <section class="menu-section">
+                <h2>Take-Out</h2>
+                <button onclick="window.location.href='/take-out.html'">Compare Prices</button>
+            </section>
 
-        <section id="newsletter">
-            <h3>Stay Updated</h3>
-            <p>Sign up to get updates on local food deals!</p>
-            <form id="email-form">
-                <input type="email" id="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </section>
+            <!-- Fast Food Section -->
+            <section class="menu-section">
+                <h2>Fast Food</h2>
+                <button onclick="window.location.href='/fast-food.html'">Compare Prices</button>
+            </section>
+        </div>
     </main>
 
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 MenuDevil. All rights reserved.</p>
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
+
 </html>
