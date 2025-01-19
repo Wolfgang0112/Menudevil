@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
+            padding-top: 50px;  /* Adjusting top padding to avoid overlap with fixed navbar */
         }
 
         h1 {
@@ -23,17 +24,21 @@
         .navbar {
             background-color: #C90020;
             overflow: hidden;
-            position: relative;
+            position: fixed; /* Make the navbar stick to the top */
+            width: 100%; /* Full width */
+            top: 0; /* Align it to the top */
+            z-index: 1000; /* Ensure the navbar is always on top */
             padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
         }
 
         /* Tiny Logo in the Left Corner */
         .navbar .logo-small {
-            width: 40px;  /* Adjust the size of the tiny logo */
+            width: 40px;
             height: auto;
             position: absolute;
-            left: 10px;  /* Distance from the left */
-            top: 10px;   /* Distance from the top */
+            left: 10px;
+            top: 10px;
         }
 
         /* Navbar links */
