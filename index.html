@@ -1,105 +1,187 @@
-<style>
-    /* Reset default margin/padding */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Devil</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #D5C9A3;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
 
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #D5C9A3; /* Background color */
-        margin: 0;
-        padding: 0;
-    }
+        h1 {
+            color: #C90020;
+            padding-top: 50px;
+        }
 
-    /* Navbar (top toolbar) */
-    .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #C90020; /* Highlight color */
-        padding: 8px 20px; /* Adjusted to make navbar thinner */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-    }
+        /* Navbar Styles */
+        .navbar {
+            background-color: #C90020;
+            overflow: hidden;
+            position: relative;
+            padding: 10px;
+        }
 
-    /* Logo in navbar */
-    .navbar img {
-        width: 30px; /* Reduced the logo size */
-        height: auto;
-        margin-right: 15px; /* Space between the logo and menu items */
-    }
+        /* Tiny Logo in the Left Corner */
+        .navbar .logo-small {
+            width: 40px;  /* Adjust the size of the tiny logo */
+            height: auto;
+            position: absolute;
+            left: 10px;  /* Distance from the left */
+            top: 10px;   /* Distance from the top */
+        }
 
-    /* Navbar links */
-    .navbar a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-        font-size: 16px;
-    }
+        /* Navbar links */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
 
-    /* Hamburger menu */
-    .hamburger-menu {
-        display: none; /* Hidden by default */
-        flex-direction: column;
-        cursor: pointer;
-    }
+        .navbar a:hover {
+            background-color: #ff4c6a;
+        }
 
-    .hamburger-menu div {
-        width: 25px;
-        height: 3px;
-        background-color: white;
-        margin: 5px;
-    }
+        /* Hamburger icon (menu) */
+        .navbar .icon {
+            display: none;
+        }
 
-    /* When the hamburger menu is clicked */
-    .navbar.active .navbar-links {
-        display: block; /* Show the menu when active */
-    }
+        /* Mobile Hamburger Menu Styles */
+        @media screen and (max-width: 600px) {
+            .navbar a {
+                display: none;
+            }
 
-    /* Side navbar (mobile) */
-    .sidebar {
-        height: 100%;
-        width: 250px;
-        position: fixed;
-        top: 0;
-        left: -250px; /* Initially hidden */
-        background-color: #C90020;
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-        transition: left 0.3s;
-    }
+            .navbar a.icon {
+                float: right;
+                display: block;
+                background-color: #C90020;
+                color: white;
+                padding: 14px;
+                font-size: 17px;
+            }
 
-    .sidebar.active {
-        left: 0; /* Slide the sidebar in */
-    }
+            .navbar.responsive {
+                position: relative;
+            }
 
-    .sidebar a {
-        color: white;
-        text-decoration: none;
-        margin: 15px 0;
-        font-size: 18px;
-    }
+            .navbar.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
 
-    /* Show sidebar items when active */
-    .sidebar a:hover {
-        background-color: #D5C9A3;
-        padding-left: 10px;
-    }
+            .navbar.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
 
-    /* Content area */
-    .content {
-        padding-top: 60px; /* To avoid overlap with navbar */
-        padding: 20px;
-    }
+        /* Category Button Styles */
+        .category {
+            background-color: #fff;
+            padding: 50px;
+            margin: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
 
-    h1 {
-        color: #C90020; /* Set title color to match toolbar */
-        padding-left: 50px; /* Ensure no overlap with navbar */
-    }
-</style>
+        .category h2 {
+            color: #C90020;
+        }
+
+        .categoryButton {
+            background-color: #C90020;
+            border: none;
+            color: white;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 15px;
+        }
+
+        .categoryButton:hover {
+            background-color: #ff4c6a;
+        }
+
+        .footer {
+            background-color: #C90020;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
+        }
+
+        /* Logo styles */
+        .logo {
+            width: 150px; /* Adjust width as needed */
+            height: auto;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar with Hamburger Menu -->
+    <div class="navbar" id="navbar">
+        <!-- Tiny Logo -->
+        <img src="logo.jpg" alt="Small Logo" class="logo-small">
+        
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+        <a href="#">Home</a>
+        <a href="#">Restaurants</a>
+        <a href="#">Fast Food</a>
+        <a href="#">Meals</a>
+        <a href="#">Deals</a>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <!-- Logo at the top -->
+    <img src="logo.jpg" alt="Menu Devil Logo" class="logo">
+
+    <h1>Menu Devil</h1>
+
+    <div class="category">
+        <h2>Compare Prices</h2>
+        <p>Find and compare prices of your favorite meals across various restaurants.</p>
+        <a href="compareprices.html"><button class="categoryButton">Compare Prices</button></a>
+    </div>
+
+    <div class="category">
+        <h2>Find a Menu</h2>
+        <p>Explore restaurant menus easily to find your next meal.</p>
+        <a href="findmenu.html"><button class="categoryButton">Find a Menu</button></a>
+    </div>
+
+    <div class="category">
+        <h2>Find a Meal</h2>
+        <p>Looking for a specific meal? Let us help you find it nearby.</p>
+        <a href="findmeal.html"><button class="categoryButton">Find a Meal</button></a>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Menu Devil. All rights reserved.</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var navbar = document.getElementById("navbar");
+            navbar.classList.toggle("responsive");
+        }
+    </script>
+
+</body>
+</html>
