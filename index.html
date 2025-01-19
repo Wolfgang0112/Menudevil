@@ -24,6 +24,16 @@
             background-color: #C90020;
             overflow: hidden;
             position: relative;
+            padding: 10px;
+        }
+
+        /* Tiny Logo in the Left Corner */
+        .navbar .logo-small {
+            width: 40px;  /* Adjust the size of the tiny logo */
+            height: auto;
+            position: absolute;
+            left: 10px;  /* Distance from the left */
+            top: 10px;   /* Distance from the top */
         }
 
         .navbar a {
@@ -119,6 +129,9 @@
 
     <!-- Navbar with Hamburger Menu -->
     <div class="navbar" id="navbar">
+        <!-- Tiny Logo -->
+        <img src="logo-small.jpg" alt="Small Logo" class="logo-small">
+        
         <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
         <a href="#">Home</a>
         <a href="#">Restaurants</a>
