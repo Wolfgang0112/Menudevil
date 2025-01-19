@@ -36,6 +36,7 @@
             top: 10px;   /* Distance from the top */
         }
 
+        /* Navbar links */
         .navbar a {
             float: left;
             display: block;
@@ -50,13 +51,17 @@
             background-color: #ff4c6a;
         }
 
-        .icon {
+        /* Hamburger icon (menu) */
+        .navbar .icon {
             display: none;
         }
 
         /* Mobile Hamburger Menu Styles */
         @media screen and (max-width: 600px) {
-            .navbar a {display: none;}
+            .navbar a {
+                display: none;
+            }
+
             .navbar a.icon {
                 float: right;
                 display: block;
@@ -66,7 +71,10 @@
                 font-size: 17px;
             }
 
-            .navbar.responsive {position: relative;}
+            .navbar.responsive {
+                position: relative;
+            }
+
             .navbar.responsive a {
                 float: none;
                 display: block;
