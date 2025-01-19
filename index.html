@@ -13,35 +13,64 @@
             padding: 0;
         }
 
-        /* Navigation Bar */
-        .navbar {
+        /* Hamburger Menu Button */
+        .menu-button {
             background-color: #ff6600;
+            border: none;
             color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: sticky;
+            padding: 10px;
+            font-size: 18px;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 1001;
+        }
+
+        .menu-button:hover {
+            background-color: #cc5200;
+        }
+
+        /* Side Navigation */
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
             top: 0;
-            z-index: 1000;
+            left: 0;
+            background-color: #ff6600;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
         }
 
-        .navbar a {
+        .sidenav a {
+            padding: 10px 15px;
             text-decoration: none;
+            font-size: 18px;
             color: white;
-            margin: 0 15px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: color 0.3s ease;
+            display: block;
+            transition: 0.3s;
         }
 
-        .navbar a:hover {
-            color: #f0c000;
+        .sidenav a:hover {
+            background-color: #cc5200;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            margin-left: 50px;
+            cursor: pointer;
         }
 
         /* Logo */
         .logo {
-            margin: 20px auto;
+            margin: 70px auto 20px;
             display: block;
             max-width: 200px;
         }
@@ -67,38 +96,35 @@
             background-color: #ff6600;
             border: none;
             color: white;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px;
+            font-size: 18px;
             cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
+            border-radius: 8px;
+            margin: 15px;
         }
 
         .categoryButton:hover {
             background-color: #cc5200;
         }
 
-        /* Footer */
+        /* Footer Styles */
         .footer {
             background-color: #ff6600;
             padding: 20px;
             color: white;
-            font-size: 14px;
-            text-align: center;
+            margin-top: 30px;
         }
 
-        /* Responsive Design */
-        @media (min-width: 768px) {
-            .category {
-                max-width: 600px;
-            }
-        }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <div class="navbar">
+    <!-- Hamburger Menu Button -->
+    <button class="menu-button" onclick="openNav()">☰ Menu</button>
+
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="index.html">Home</a>
         <a href="restaurants.html">Restaurants</a>
         <a href="fastfood.html">Fast Food</a>
@@ -107,26 +133,29 @@
         <a href="contact.html">Contact Us</a>
     </div>
 
+    <!-- Main Content -->
+    <h1 style="text-align:center; color:#ff6600; margin-top:100px;">Menu Devil</h1>
+    
     <!-- Logo -->
-    <img src="logo.jpg" alt="Menu Devil Logo" class="logo">
+    <img src="logo.png" alt="Menu Devil Logo" class="logo">
 
-    <!-- Updated Sections -->
+    <!-- Category Sections -->
     <div class="category">
         <h2>Compare Prices</h2>
-        <p>See prices side-by-side to find the best deals on your favorite meals.</p>
+        <p>Compare prices of menu items from various restaurants in your area.</p>
         <a href="compareprices.html"><button class="categoryButton">Compare Prices</button></a>
     </div>
 
     <div class="category">
         <h2>Find a Menu</h2>
-        <p>Browse menus from local restaurants in your area with ease.</p>
-        <a href="findamenu.html"><button class="categoryButton">Find a Menu</button></a>
+        <p>Find the full menus of your favorite restaurants nearby.</p>
+        <a href="findmenu.html"><button class="categoryButton">Find a Menu</button></a>
     </div>
 
     <div class="category">
         <h2>Find a Meal</h2>
-        <p>Search for specific dishes and discover where to enjoy them nearby.</p>
-        <a href="findameal.html"><button class="categoryButton">Find a Meal</button></a>
+        <p>Search for specific meals and compare prices across restaurants.</p>
+        <a href="findmeal.html"><button class="categoryButton">Find a Meal</button></a>
     </div>
 
     <!-- Footer -->
@@ -134,5 +163,17 @@
         <p>© 2025 Menu Devil. All rights reserved.</p>
     </div>
 
+    <!-- JavaScript -->
+    <script>
+        /* Open the side navigation */
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        /* Close the side navigation */
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 </body>
 </html>
