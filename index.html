@@ -5,19 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Devil</title>
     <style>
+        /* General Body Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #D5C9A3; /* New background color */
+            background-color: #D5C9A3;
             margin: 0;
             padding: 0;
             text-align: center;
         }
 
         h1 {
-            color: #C90020; /* New highlight color */
+            color: #C90020;
             padding-top: 50px;
         }
 
+        /* Navbar Styles */
+        .navbar {
+            background-color: #C90020;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #ff4c6a;
+        }
+
+        .icon {
+            display: none;
+        }
+
+        /* Mobile Hamburger Menu Styles */
+        @media screen and (max-width: 600px) {
+            .navbar a {display: none;}
+            .navbar a.icon {
+                float: right;
+                display: block;
+                background-color: #C90020;
+                color: white;
+                padding: 14px;
+                font-size: 17px;
+            }
+
+            .navbar.responsive {position: relative;}
+            .navbar.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+
+            .navbar.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        /* Category Button Styles */
         .category {
             background-color: #fff;
             padding: 50px;
@@ -28,11 +81,11 @@
         }
 
         .category h2 {
-            color: #C90020; /* New highlight color */
+            color: #C90020;
         }
 
         .categoryButton {
-            background-color: #C90020; /* New highlight color */
+            background-color: #C90020;
             border: none;
             color: white;
             padding: 15px;
@@ -43,40 +96,30 @@
         }
 
         .categoryButton:hover {
-            background-color: #9b0017; /* Slightly darker shade for hover */
+            background-color: #ff4c6a;
         }
 
         .footer {
-            background-color: #C90020; /* New highlight color */
+            background-color: #C90020;
             padding: 20px;
             color: white;
             margin-top: 30px;
         }
 
-        /* Navbar styles */
-        .navbar {
-            display: flex;
-            justify-content: space-around;
-            background-color: #C90020; /* New highlight color */
-            padding: 10px;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
+        /* Logo styles */
+        .logo {
+            width: 150px; /* Adjust width as needed */
+            height: auto;
+            margin-top: 20px;
         }
 
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
+    <!-- Navbar with Hamburger Menu -->
+    <div class="navbar" id="navbar">
+        <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
         <a href="#">Home</a>
         <a href="#">Restaurants</a>
         <a href="#">Fast Food</a>
@@ -85,29 +128,39 @@
         <a href="#">Contact Us</a>
     </div>
 
+    <!-- Logo at the top -->
+    <img src="logo.jpg" alt="Menu Devil Logo" class="logo">
+
     <h1>Menu Devil</h1>
 
     <div class="category">
         <h2>Compare Prices</h2>
-        <p>Compare menu prices from restaurants in your area.</p>
+        <p>Find and compare prices of your favorite meals across various restaurants.</p>
         <a href="compareprices.html"><button class="categoryButton">Compare Prices</button></a>
     </div>
 
     <div class="category">
         <h2>Find a Menu</h2>
-        <p>Search for restaurant menus near you.</p>
+        <p>Explore restaurant menus easily to find your next meal.</p>
         <a href="findmenu.html"><button class="categoryButton">Find a Menu</button></a>
     </div>
 
     <div class="category">
         <h2>Find a Meal</h2>
-        <p>Discover meals by category or type.</p>
+        <p>Looking for a specific meal? Let us help you find it nearby.</p>
         <a href="findmeal.html"><button class="categoryButton">Find a Meal</button></a>
     </div>
 
     <div class="footer">
         <p>© 2025 Menu Devil. All rights reserved.</p>
     </div>
+
+    <script>
+        function toggleMenu() {
+            var navbar = document.getElementById("navbar");
+            navbar.classList.toggle("responsive");
+        }
+    </script>
 
 </body>
 </html>
